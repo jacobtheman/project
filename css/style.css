@@ -1,0 +1,121 @@
+ body {
+    background-color: grey;
+
+}
+
+h1 {
+    background-color: rgb(162, 0, 255);
+    border: 5px floralwhite solid;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 500px;
+    margin: 5px auto;
+
+}
+
+.sidebar {
+
+    background-color: hotpink;
+    padding: 5px;
+    width: 200px;
+}
+
+.flex {
+
+
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+.box {
+    background-color: lawngreen;
+    margin: 1px;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.relative {
+    position: relative;
+    width: 1000px;
+    height: 550px;
+    background-color: black;
+    left: 0px;
+    border:5px blue inset;
+}
+
+#btn {
+    width: 75px;
+    height: 25px;
+    position: absolute;
+    background-color:rgb(57, 237, 250);
+    animation: rotate linear infinite 0s;
+    border-radius: 5px;
+
+}
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+.eachPlayer{
+    position: relative;
+    border: dotted orangered 1px ;
+}
+
+.date{
+    background-color: black;
+    position: absolute;
+    color: blanchedalmond;
+    padding: 3px;
+    display: none;
+}
+
+.name:hover + .date{
+display: block;
+
+}
+
+.gameOver{
+    
+    color: cornsilk;
+    height: 100px;
+    width: 100px;
+    margin: 200px auto;
+ animation: myAnima 3s infinite;
+}
+@keyframes myAnima {
+    0%{
+        background-color: darkblue;
+    }
+    50%{
+        background-color: rgb(0, 139, 19);
+        height: 300px;
+    width: 300px;
+
+    }
+    100%{
+        background-color: darkblue;
+        height: 100px;
+    width: 100px;
+    }
+}   
+.stop{
+    float: left;
+    background-color: rgb(162, 0, 255);
+    border: 5px floralwhite solid;
+    border-radius: 5px;
+margin: 5px;
+}
+
+.continue{
+    float: left;
+    background-color: rgb(162, 0, 255);
+    border: 5px floralwhite solid;
+    border-radius: 5px;
+    margin: 5px;
+}
+.restart{
+    border: 5px floralwhite solid;
+}
