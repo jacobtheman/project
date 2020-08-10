@@ -56,7 +56,6 @@ function start() {
   toAppend = ""
   h1.removeEventListener("click",start)
   cont = document.querySelector(".container")
-  // h1.removeEventListener("click", start)
   h1.innerHTML=`Catch Me If You Can`
   h1.addEventListener("click", startGame);
   cont.innerHTML= `<div class="sidebar">            
@@ -81,11 +80,12 @@ function start() {
 }
 
 var i = null;
-
+var continu =''
 
 function startGame() {
   alert("you ready to start?");
   h1.removeEventListener("click", startGame)
+  
   btn = document.getElementById("btn");
   h1.style.border="none"
   h1.innerHTML=`<div class="stop">Stop</div><div class="continue">Press to Continue</div>`
@@ -93,7 +93,7 @@ function startGame() {
   btn.addEventListener("mouseover", dance);
 var stop = document.querySelector(".stop")
 stop.addEventListener("click",stopp)
-var continu = document.querySelector(".continue")
+continu = document.querySelector(".continue")
 continu.addEventListener("click",continues)
   timer()
   points()
@@ -177,20 +177,24 @@ dance(i)
 
 
 function endGame() {
+  alert("Your Score Is :" + sco)
   if (lev == 6) {
     addPlayer()  
   }
   if (tim == 0) {
     relative.innerHTML= `<div class="gameOver">game over</div>`
+    
     h1.innerHTML=`<div class="restart">Please Try Again </div>`  
   }
   btn.style.animationDuration = ``
   btn.removeEventListener("mouseover", dance);
   relative.removeEventListener("click",misPoint)
+  
   clearTimeout(danceInt)
   clearInterval(timeInt)
   
   console.log(danceInt);
+  h1.style.border=""
   h1.addEventListener("click",start)
  };
 
@@ -233,11 +237,12 @@ function stopp() {
   relative.removeEventListener("click",misPoint)
 }
 function continues() {
+  continu.removeEventListener("click",continues)
   timeInt = setInterval(function () {
     tim = tim - 1
     time.innerHTML = ` Timer:<br/>${tim}`
     if (tim == 0) {
-      alert("please try again ")
+      
       endGame()      
     }
   }, 1000);
